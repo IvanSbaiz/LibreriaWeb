@@ -4,9 +4,9 @@
   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-  <include file="/db/changelogs/2022-07-29-create-table-clienti.xml"/>
+<!--  <include file="/db/changelogs/2022-07-29-create-table-clienti.xml"/>
   <include file="/db/changelogs/2022-07-29-modifica-tabella-clienti.xml"/>
   <include file="/db/changelogs/2022-08-01-modifica-tabella-libri.xml"/>
   <include file="/db/changelogs/2022-08-05-create-table-casaeditrice.xml"/>
-  <include file="/db/changelogs/2022-08-05-modifica-tabella-libri.xml"/>
+  <include file="/db/changelogs/2022-08-05-modifica-tabella-libri.xml"/> -->
 </databaseChangeLog>

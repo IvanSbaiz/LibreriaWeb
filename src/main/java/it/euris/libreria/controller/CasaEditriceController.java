@@ -18,36 +18,36 @@ import it.euris.libreria.service.CasaEditriceService;
 @RestController
 @RequestMapping("/casaeditrice")
 public class CasaEditriceController {
-	
-	private CasaEditriceService casaEditriceService;
-	
-	public CasaEditriceController(CasaEditriceService casaEditriceService) {
-		this.casaEditriceService = casaEditriceService;
-	}
-	
-	@GetMapping
-	public List<CasaEditrice> getAll() {
-		return casaEditriceService.getAll();
-	}
-	
-	@GetMapping("/{idCasaeditrice}")
-	public CasaEditrice get(@PathVariable Long idCasaeditrice) {
-		return casaEditriceService.get(idCasaeditrice);
-	}
-	
-	@PostMapping
-	public CasaEditrice save(@RequestBody CasaEditrice entity) {
-		return casaEditriceService.save(entity);
-	}
-	
-	@PutMapping
-	public CasaEditrice update(@RequestBody CasaEditrice entity) {
-		return casaEditriceService.save(entity);
-	}
-	
-	@DeleteMapping("/{idCasaeditrice}")
-	public Boolean deleteById(@PathVariable Long idCasaeditrice) {
-		return casaEditriceService.deleteById(idCasaeditrice);
-	}
+
+  private CasaEditriceService casaEditriceService;
+
+  public CasaEditriceController(CasaEditriceService casaEditriceService) {
+    this.casaEditriceService = casaEditriceService;
+  }
+
+  @GetMapping
+  public List<CasaEditrice> getAll() {
+    return casaEditriceService.getAll();
+  }
+
+  @GetMapping("/{idCasaeditrice}")
+  public CasaEditrice get(@PathVariable Long idCasaeditrice) {
+    return casaEditriceService.get(idCasaeditrice);
+  }
+
+  @PostMapping
+  public CasaEditrice save(@RequestBody CasaEditrice entity) {
+    return casaEditriceService.save(entity);
+  }
+
+  @PutMapping
+  public CasaEditrice update(@RequestBody CasaEditrice entity) {
+    return casaEditriceService.save(entity);
+  }
+
+  @DeleteMapping("/{idCasaeditrice}")
+  public Boolean deleteById(@PathVariable Long idCasaeditrice) {
+    return casaEditriceService.deleteById(idCasaeditrice);
+  }
 
 }

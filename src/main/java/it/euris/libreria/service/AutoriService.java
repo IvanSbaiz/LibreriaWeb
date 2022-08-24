@@ -1,5 +1,7 @@
 package it.euris.libreria.service;
 
+import it.euris.libreria.data.model.Libri;
+import it.euris.libreria.data.response.GenericResponse;
 import java.util.List;
 
 import org.springframework.data.domain.Sort.Direction;
@@ -17,6 +19,8 @@ public interface AutoriService {
 	public List<Autori> getAllPageable(int nrPage, int pageSize, String orderColumnName, Direction dir) ;
 	
 	public Autori save(Autori autore);
+
+	public GenericResponse update(Autori autore);
 	
 	public void delete(Autori autore);
 	

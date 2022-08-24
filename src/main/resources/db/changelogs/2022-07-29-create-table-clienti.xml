@@ -28,5 +28,14 @@
   	</rollback>
   
   </changeSet>
-  
+	<changeSet id="ivan" author="Ivan">
+		<createTable tableName="autori">
+				<column autoIncrement="true" name="id" type="BIGINT">
+						<constraints nullable="false" primaryKey="true" primaryKeyName="pk_autori"/>
+				</column>
+				<column name="nome" type="VARCHAR(255)"/>
+				<column name="cognome" type="VARCHAR(255)"/>
+		</createTable>
+	</changeSet>
+
 </databaseChangeLog>

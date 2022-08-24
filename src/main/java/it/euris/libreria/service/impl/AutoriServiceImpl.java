@@ -1,5 +1,6 @@
 package it.euris.libreria.service.impl;
 
+import it.euris.libreria.data.response.GenericResponse;
 import java.util.List;
 import java.util.Optional;
 
@@ -7,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import it.euris.libreria.data.model.Autori;
@@ -67,7 +69,24 @@ public class AutoriServiceImpl implements AutoriService {
 		Autori autoreToSave = Autori.builder().nome(autore.getNome()).cognome(autore.getCognome()).build();
 		return autoriRepository.save(autoreToSave);
 	}
-	
+
+	@Override
+	public GenericResponse update(Autori autore) {
+		GenericResponse response = new GenericResponse();
+
+		if (autoriRepository.findById(autore.getId()).isPresent()) {
+
+				response.setStatusCode(HttpStatus.OK);
+				response.setMessage("Autore aggiornato correttamente");
+
+			} else {
+				response.setStatusCode(HttpStatus.NOT_FOUND);
+				response.setMessage("Autore non aggiornato. Non è stato trovato l'autore");
+			}
+
+		return response;
+	}
+
 	@Override
 	public void delete(Autori autore) {
 		autoriRepository.delete(autore);
